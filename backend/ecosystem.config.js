@@ -16,7 +16,7 @@ module.exports = {
       host: DEPLOY_HOST,
       ref: DEPLOY_REF,
       repo: DEPLOY_REPOSITORY,
-      path: DEPLOY_PATH,
+      path: "git@github.com:breadkvass/web-plus-pm2-deploy.git",
       'pre-deploy-local': `bash scripts/deployEnv.sh ${DEPLOY_USER}@${DEPLOY_HOST} ${DEPLOY_PATH}`,
       'post-deploy': 'cd backend && pwd && npm ci && npm run build && pm2 startOrRestart ecosystem.config.js --env production',
     },
