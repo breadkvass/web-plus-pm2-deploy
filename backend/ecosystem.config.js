@@ -18,7 +18,7 @@ module.exports = {
       repo: DEPLOY_REPOSITORY,
       path: "~/pm2-backend",
       'pre-deploy-local': `bash scripts/deployEnv.sh ${DEPLOY_USER}@${DEPLOY_HOST} ${DEPLOY_PATH}`,
-      'post-deploy': 'cd backend && nvm use 20 && npm ci && npm run build && pm2 startOrRestart ecosystem.config.js --env production',
+      'post-deploy': 'cd backend && npm ci && npm run build && pm2 startOrRestart ecosystem.config.js --env production',
     },
   },
 }
